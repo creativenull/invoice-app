@@ -20,10 +20,9 @@
           </label>
         </div>
       </div>
-    </div>
-    <div class="navbar-center">
       <span class="normal-case text-xl">Invoice App</span>
     </div>
+    <div class="navbar-center"></div>
     <div class="navbar-end"></div>
   </div>
 </template>
