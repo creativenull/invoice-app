@@ -1,0 +1,8 @@
+root = true
+
+[*]
+charset = utf-8
+
+[*.{js,ts,tsx,json,vue}]
+indent_size = 2
+indent_style = space
