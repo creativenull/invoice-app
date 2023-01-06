@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const appConfig = useAppConfig()
+</script>
+
 <template>
   <div class="navbar bg-base-100">
     <div class="navbar-start">
@@ -20,7 +24,7 @@
           </label>
         </div>
       </div>
-      <span class="normal-case text-xl">Invoice App</span>
+      <span class="normal-case text-xl">{{ appConfig.name }}</span>
     </div>
     <div class="navbar-center"></div>
     <div class="navbar-end"></div>

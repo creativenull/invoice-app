@@ -1,11 +1,14 @@
-<template>
-  <div>
-    <AppDrawer>
-      <!-- Header -->
-      <AppHeader />
+<script setup lang="ts">
+const appConfig = useAppConfig();
+useHead({ title: appConfig.name });
+</script>
 
-      <!-- Content -->
-      <slot />
-    </AppDrawer>
-  </div>
+<template>
+  <AppDrawer>
+    <!-- Header -->
+    <AppHeader />
+
+    <!-- Content -->
+    <slot />
+  </AppDrawer>
 </template>
