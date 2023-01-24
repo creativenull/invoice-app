@@ -1,6 +1,11 @@
 <script setup lang="ts">
 const appConfig = useAppConfig();
-useHead({ title: appConfig.name });
+useHead({
+  title: appConfig.name,
+  htmlAttrs: {
+    "data-theme": "luxury",
+  },
+});
 </script>
 
 <template>
