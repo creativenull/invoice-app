@@ -1,17 +1,25 @@
 <script setup lang="ts">
-const appConfig = useAppConfig();
+// const api = useApi();
+// const { invoices } = await api.getInvoices();
+const { invoices } = await $fetch("/api/invoices");
 </script>
 
 <template>
-  <div class="hero min-h-screen bg-base-200">
-    <div class="hero-content text-center">
-      <div class="max-w-md">
-        <h1 class="text-5xl font-bold">Hello there</h1>
-        <p class="py-6">
-          This is the start page of {{ appConfig.name }}, click the links below
-          to get started.
-        </p>
-        <button class="btn btn-primary">Create an invoice</button>
+  <div class="mx-4 my-8 space-y-4 md:mx-0 md:w-3/5 md:mx-auto">
+    <div
+      v-for="invoice in invoices"
+      :key="invoice.refId"
+      class="card bg-primary text-primary-content"
+    >
+      <div class="card-body flex-row items-center justify-between">
+        <div class="flex flex-col">
+          <h2 class="card-title">{{ invoice.title }}</h2>
+          <p>{{ invoice.refId }}</p>
+        </div>
+        <div class="card-actions">
+          <!-- <NuxtLink class="btn" :to="invoice.route"> View </NuxtLink> -->
+          <a class="btn" :href="invoice.route"> View </a>
+        </div>
       </div>
     </div>
   </div>
